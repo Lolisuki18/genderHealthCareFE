@@ -22,10 +22,10 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { CssBaseline } from "@mui/material";
-import { store, persistor } from "./redux/store";
-import AppRoutes from "./routes";
-import { CustomThemeProvider } from "./context/ThemeContext";
-import { UserProvider } from "./context/UserContext";
+import { store, persistor } from "@redux/store";
+import AppRoutes from "@/routes";
+import { CustomThemeProvider } from "@context/ThemeContext";
+import { UserProvider } from "@context/UserContext";
 import "./App.css";
 
 function App() {

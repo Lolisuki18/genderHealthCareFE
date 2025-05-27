@@ -1,11 +1,11 @@
-import apiClient from "./api";
+import apiClient from "@services/api";
 
 // Service cho các API liên quan đến người dùng
 export const userService = {
   // Đăng nhập
   login: async (credentials) => {
     try {
-      const response = await apiClient.post("/auth/login", credentials);
+      const response = await apiClient.post("/users/login", credentials);
       return response.data;
     } catch (error) {
       throw error.response?.data || error;
@@ -15,7 +15,7 @@ export const userService = {
   // Đăng ký
   register: async (userData) => {
     try {
-      const response = await apiClient.post("/auth/register", userData);
+      const response = await apiClient.post("/users/register", userData);
       return response.data;
     } catch (error) {
       throw error.response?.data || error;
@@ -25,7 +25,7 @@ export const userService = {
   // Lấy thông tin người dùng hiện tại
   getCurrentUser: async () => {
     try {
-      const response = await apiClient.get("/users/me");
+      const response = await apiClient.get("/users/profile");
       return response.data;
     } catch (error) {
       throw error.response?.data || error;

@@ -17,9 +17,9 @@
 
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { HomePage } from "./components/pages/HomePage";
-import { NotFoundPage } from "./components/pages/NotFoundPage";
-import MainLayout from "./components/layouts/MainLayout";
+import { HomePage } from "@pages/HomePage";
+import { NotFoundPage } from "@pages/NotFoundPage";
+import MainLayout from "@layouts/MainLayout";
 
 const AppRoutes = () => {
   return (
@@ -28,6 +28,7 @@ const AppRoutes = () => {
         <Route index element={<HomePage />} />
         {/* Add more routes here as your app grows */}
         <Route path="*" element={<NotFoundPage />} />
+        {/* <Route path="/profile" element={<ProfilePage />} /> */}
       </Route>
     </Routes>
   );
