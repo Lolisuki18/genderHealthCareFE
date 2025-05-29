@@ -20,6 +20,8 @@ import { Routes, Route } from "react-router-dom";
 import { HomePage } from "@pages/HomePage";
 import { NotFoundPage } from "@pages/NotFoundPage";
 import MainLayout from "@layouts/MainLayout";
+import LoginPage from "./components/pages/LoginPage";
+import RegisterForm from "./components/pages/RegisterPage";
 
 const AppRoutes = () => {
   return (
@@ -29,6 +31,8 @@ const AppRoutes = () => {
         {/* Add more routes here as your app grows */}
         <Route path="*" element={<NotFoundPage />} />
         {/* <Route path="/profile" element={<ProfilePage />} /> */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterForm />} />
       </Route>
     </Routes>
   );

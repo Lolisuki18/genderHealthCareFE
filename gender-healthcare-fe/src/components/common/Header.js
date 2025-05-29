@@ -88,6 +88,7 @@ const Header = () => {
   //xử lý khi sử dụng đăng xuất
   const handleLogout = async () => {
     localStorageUtil.remove("user");
+    localStorageUtil.remove("loginSuccessMessage");
     setIsLoggedIn(false);
     setUser(null);
     handleCloseMenu();

@@ -41,4 +41,14 @@ export const userService = {
       throw error.response?.data || error;
     }
   },
+  sendCode: async (email) => {
+    try {
+      const response = await apiClient.post("/users/send-verification", {
+        email,
+      });
+      return response.data;
+    } catch (error) {
+      throw error.response?.data || error;
+    }
+  },
 };

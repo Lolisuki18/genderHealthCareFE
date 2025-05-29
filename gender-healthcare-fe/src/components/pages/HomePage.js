@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Typography,
@@ -9,8 +9,32 @@ import {
   CardContent,
   CardMedia,
 } from "@mui/material";
+import localStorageUtil from "@/utils/localStorage";
+import notification from "@/utils/notification";
 
 export const HomePage = () => {
+  // --- LIFECYCLE HOOKS ---
+  useEffect(() => {
+    // Kiểm tra và hiển thị thông báo đăng nhập thành công
+    const loginMessage = localStorageUtil.get("loginSuccessMessage");
+
+    if (loginMessage) {
+      // Hiển thị thông báo
+      notification.success(
+        loginMessage.title || "Đăng nhập thành công!",
+        loginMessage.message || "Chào mừng bạn trở lại!",
+        {
+          duration: 3000,
+        }
+      );
+
+      // XÓA NGAY LẬP TỨC để tránh hiển thị lại
+      localStorageUtil.remove("loginSuccessMessage");
+    }
+
+    console.log("HomePage component mounted");
+  }, []); // Chỉ chạy 1 lần khi component mount
+
   return (
     <Box>
       {/* Hero Section */}
